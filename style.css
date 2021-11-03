@@ -9,30 +9,62 @@
     background: transparent;
 
     font-family: inherit;
+
     text-decoration: none;
 
 }
 
-ol, ul, li {
-    list-style: none;
-    display: block;
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #55bcc9; 
+    background-image: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(252,68,69,1) 35%, rgba(0,212,255,1) 100%);
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-a img {
-    border: none;
+@keyframes welcomeAnim {
+    0% {background-color: #3FEEE6; transform: rotate(0); scale: (1);}
+    50% {background-color: #FC4445; transform: rotate(180deg) scale(0.1);}
+    100% {background-color: #3FEEE6; transform: rotate(360deg); scale: (1);}
 }
 
 
-button, a {
-    cursor: pointer;
-    color: inherit;
+#welcome {
+    position: relative;
+    width: calc(100vh - 160px);
+    height: calc(100vh - 160px);
+    margin: 80px auto;
+
+    border-radius: 15px;
+    box-shadow: 0 0 40px #FC4445;
+    background-color: #3FEEE6;
+
+    animation-name: welcomeAnim;
+    animation-duration: 2s;
+    animation-fill-mode:forwards ;
+    animation-iteration-count: infinite;
 }
 
-textarea {
-    resize: none;
+#welcome button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 200px;
+    border: 8px solid #97CAEF;
+    border-radius: 50%;
+
+    font-weight: 800;
+    color: #FC4445;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    background-color: #55bcc6;
+
+    transform: translate(-50%, -50%);
+    transition: transform 1s;
 }
+
+#welcome button:hover {
+    transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+
+}
+
